@@ -1,3 +1,19 @@
+body {
+    background-color: #240054;
+}
+
+* {
+    font-family: "Space Mono";
+}
+
 h1 {
-    color: red;
+    color: #E88976;
+}
+
+nav>ul>li {
+    padding: 4px;
+}
+
+nav>ul>li:hover {
+    border: solid #82BAFF 2px;
 }
