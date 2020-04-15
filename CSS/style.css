@@ -14,6 +14,10 @@ nav>ul>li {
     padding: 4px;
 }
 
+nav>ul>li {
+    border: solid transparent 2px;
+}
+
 nav>ul>li:hover {
     border: solid #82BAFF 2px;
 }
