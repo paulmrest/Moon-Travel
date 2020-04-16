@@ -1,18 +1,60 @@
 body {
     background-color: #240054;
-}
-
-* {
+    max-width: 900px;
+	width: 80%;
+	margin: 20px auto;
+    border: 10px solid #E88976;
     font-family: "Space Mono";
 }
 
+div#main {
+    margin-left: 3%;
+    margin-right: 3%;
+    color: #82BAFF;
+}
+
 h1 {
+    text-align: center;
     color: #E88976;
 }
 
-nav>ul>li {
-    padding: 4px;
+img {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0px 0px 0px;
 }
+
+nav>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #76E885;
+}
+
+nav>ul>li {
+    display: inline;
+}
+
+nav>ul>li:hover {
+    background-color: #82BAFF;
+}
+
+nav>ul>li>a {
+    padding: 0px 10px 0px 10px;
+}
+
+div#newsletter {
+    padding: 0px 0px 20px 0px;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+}
+
+/*
+TRASH
 
 nav>ul>li {
     border: solid transparent 2px;
@@ -21,3 +63,4 @@ nav>ul>li {
 nav>ul>li:hover {
     border: solid #82BAFF 2px;
 }
+*/
