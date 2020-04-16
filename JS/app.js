@@ -4,14 +4,21 @@ function daysSincePeopleOnMoon() {
     document.getElementById('dayssincemoon').innerHTML = Math.ceil(timeDiffMicroSeconds / (1000 * 24 * 60 * 60));
 }
 
-
-function calculateCost() {
+function getWeightValue() {
     //get value from text box
     var weightFromTextBox = document.getElementById('enterweight').value;
+    if (!isNaN(parseFloat(weightFromTextBox)) && isFinite(weightFromTextBox)) {
+        calculateCost(weightFromTextBox);
+    }
+    else
+    {
+        document.getElementById('enterweight').value = '';
+        document.getElementById('calculatedcost').innerHTML = 'Please enter a number value for the weight.';
+    }
+}
 
-    //determine if weight is in pounds or kilograms
-    //if it is in pounds, convert to kilograms
-    var weightKilograms = weightInKilograms(weightFromTextBox);
+function calculateCost(validNumericalWeight) {
+    var weightKilograms = weightInKilograms(validNumericalWeight);
 
     const lunarCostUSDPerKilogram = 2000000; //2 million USD per kilogram
     var totalCost = lunarCostUSDPerKilogram * weightKilograms
@@ -19,25 +26,28 @@ function calculateCost() {
     document.getElementById('calculatedcost').innerHTML = 'It would cost USD $' + totalCost.toFixed(2) + ' to send you and your luggage to the Moon.';
 }
 
+//determine if weight is in pounds or kilograms
+//if it is in pounds, convert to kilograms
 function weightInKilograms(weight) {
     const poundsToKilogramsConv = 0.453592;
-    var calcCostUsingPounds = true;
+    var weightInKilograms = weight;
     var weightButtons = document.getElementsByName('weightbutton');
     for (i = 0; i < weightButtons.length; i++)
     {
         if (weightButtons[i].checked)
         {
             var weightUnit = weightButtons[i].value;
-            if (weightUnit == 'kilograms')
+            if (weightUnit == 'pounds')
             {
-                return weight;
-            }
-            else
-            {
-                return weight * poundsToKilogramsConv;
+                weightInKilograms = weight * poundsToKilogramsConv;
             }
         }
     }
+    return weightInKilograms;
+}
+
+function checkWeightValueIsNumerical(weight) {
+    
 }
 
 function cheeseGuesser() {
@@ -54,6 +64,6 @@ function cheeseGuesser() {
         'Gorgonzola',
         'Epoisses'
     ]
-    var psuedoRandomChoice = Math.floor(Math.random() * Math.floor(cheeses.length));
-    document.getElementById('cheesetype').innerHTML = cheeses[psuedoRandomChoice];
+    var psuedoRandomChoice = Math.floor(Math.random() * cheeses.length);
+    document.getElementById('cheesetype').innerHTML = cheeses[psuedoRandomChoice - 1];
 }

@@ -51,11 +51,12 @@
                 <input type="radio" name="weightbutton" id="pounds" value="pounds">
                 <label for="pounds">Pounds</label>
                 <br>
-                <input type="radio" name="weightbutton" id="kilograms" value="kilograms">
+                <input type="radio" name="weightbutton" id="kilograms" 
+                value="kilograms" checked="checked">
                 <label for="kilograms">Kilograms</label>
             </form>
             <input type="text" name="weight" id="enterweight">
-            <input type="button" value="Calculate Cost" onclick="calculateCost()">
+            <input type="button" value="Calculate Cost" onclick="getWeightValue()">
             <p id="calculatedcost">Calculated Cost</p>
         </section>
         <br>
