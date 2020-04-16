@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/app.js"></script>
     <title>Travel to the Moon for Cheap</title>
 </head>
-<body>
+<body onload="daysSincePeopleOnMoon()">
     <h1>Travel to the Moon for Cheap!</h1>
     <header>
         <nav>
@@ -23,6 +24,7 @@
     </header>
     <div id="main"> 
         <h2>The Moon is an exciting and dynamic place to visit any time of year!</h2>
+        <h3>It has been <span id="dayssincemoon"></span> days since humans were last on the moon.</h3>
         <section>
             <p>
                 Cliche post-ironic woke four dollar toast umami PBR&B jianbing cornhole williamsburg 90's pok pok polaroid cronut pop-up. Photo booth raw denim austin vexillologist, crucifix hexagon quinoa humblebrag. Chicharrones post-ironic fashion axe blog mumblecore. Farm-to-table meh mlkshk affogato, succulents schlitz lyft tumblr vexillologist. Shaman snackwave fam, tousled pop-up hammock normcore iPhone mumblecore 90's coloring book gluten-free pug blue bottle. Echo park deep v viral, meditation franzen bicycle rights occupy gentrify lomo.
@@ -43,6 +45,24 @@
                 <li>Self-Powered Flying Machines</li>
                 <li>Three star dining at Eternal Night in the south pole</li>
             </ul>
+        <section class="weightcalc">
+                Find out how much it will cost you and your luggage to go to the moon! Enter the total weight, in pounds or kilograms, of you and your luggage below.
+            <form>
+                <input type="radio" name="weightbutton" id="pounds" value="pounds">
+                <label for="pounds">Pounds</label>
+                <br>
+                <input type="radio" name="weightbutton" id="kilograms" value="kilograms">
+                <label for="kilograms">Kilograms</label>
+            </form>
+            <input type="text" name="weight" id="enterweight">
+            <input type="button" value="Calculate Cost" onclick="calculateCost()">
+            <p id="calculatedcost">Calculated Cost</p>
+        </section>
+        <br>
+        <section class="cheese">
+            What kind of cheese will the moon be made out of when you get there?
+            <input type="button" value="Find Out!" onclick="cheeseGuesser()">
+            <p id="cheesetype">Type of Cheese</p>
         </section>
         <p>
             Want more information and access to exclusive offers? Sign up for our newsletter!
@@ -62,5 +82,6 @@
             </ul>
         </nav>
     </footer>
+
 </body>
 </html>

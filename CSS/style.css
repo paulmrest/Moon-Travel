@@ -44,11 +44,39 @@ nav>ul>li>a {
     padding: 0px 10px 0px 10px;
 }
 
+section.weightcalc {
+    border: 5px solid black;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+
+section.weightcalc>form {
+    padding: 10px 0px 10px 0px;
+}
+
+p#calculatedcost {
+    border: 2px solid black;
+    text-align: center;
+}
+
+section.cheese {
+    border: 5px solid black;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+
+p#cheesetype {
+    border: 2px solid black;
+    text-align: center;
+}
+
 div#newsletter {
     padding: 0px 0px 20px 0px;
 }
 
-input {
+div#newsletter>input {
     display: block;
     margin: 0 auto;
 }
