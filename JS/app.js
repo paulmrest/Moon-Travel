@@ -1,5 +1,5 @@
 function daysSincePeopleOnMoon() {
-    var dateLastOnMoon = new Date('12/14/1972');
+    const dateLastOnMoon = new Date('12/14/1972');
     var timeDiffMicroSeconds = Math.abs(new Date() - dateLastOnMoon);
     document.getElementById('dayssincemoon').innerHTML = Math.ceil(timeDiffMicroSeconds / (1000 * 24 * 60 * 60));
 }
@@ -23,8 +23,20 @@ function calculateCost(validNumericalWeight) {
     const lunarCostUSDPerKilogram = 2000000; //2 million USD per kilogram
     var totalCost = lunarCostUSDPerKilogram * weightKilograms
 
-    document.getElementById('calculatedcost').innerHTML = 'It would cost USD $' + totalCost.toFixed(2) + ' to send you and your luggage to the Moon.';
+    document.getElementById('calculatedcost').innerHTML = 'It would cost USD ' + 
+    totalCost.toLocaleString('en-US',
+    {
+        style: 'currency',
+        currency: 'USD'
+    }
+    ) + 
+    ' to send you and your luggage to the Moon.';
 }
+
+///TEST
+var number = 10000;
+console.log(number.toLocaleString('en'))
+///TEST
 
 //determine if weight is in pounds or kilograms
 //if it is in pounds, convert to kilograms
@@ -65,5 +77,5 @@ function cheeseGuesser() {
         'Epoisses'
     ]
     var psuedoRandomChoice = Math.floor(Math.random() * cheeses.length);
-    document.getElementById('cheesetype').innerHTML = cheeses[psuedoRandomChoice - 1];
+    document.getElementById('cheesetype').innerHTML = cheeses[psuedoRandomChoice];
 }
