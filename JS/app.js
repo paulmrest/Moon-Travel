@@ -25,12 +25,11 @@ function calculateCost(validNumericalWeight) {
 
     document.getElementById('calculatedcost').innerHTML = 'It would cost USD ' + 
     totalCost.toLocaleString('en-US',
-    {
-        style: 'currency',
-        currency: 'USD'
-    }
-    ) + 
-    ' to send you and your luggage to the Moon.';
+        {
+            style: 'currency',
+            currency: 'USD'
+        }) 
+    + ' to send you and your luggage to the Moon.';
 }
 
 ///TEST
@@ -78,4 +77,34 @@ function cheeseGuesser() {
     ]
     var psuedoRandomChoice = Math.floor(Math.random() * cheeses.length);
     document.getElementById('cheesetype').innerHTML = cheeses[psuedoRandomChoice];
+}
+
+function moonGame() {
+    //TODO realisitcally, this should be choosing randomly from a selection of questions, rather than just using one.
+    const saturnVLbsLiftoffThrust = 7500000; //7.5 million lbs of force at liftoff
+    var correctAnswer = false;
+    while (!correctAnswer)
+    {
+        var userAnswer = window.prompt('How many pounds of thrust did the Saturn V have at liftoff (please enter a numerical value)? Enter "x" to exit.');
+
+        if (userAnswer.toLowerCase() === 'x') //strongly typed comparison
+        {
+            window.alert('Thanks for playing!');
+            break;
+        }
+
+        if (isNaN(parseFloat(userAnswer)) || !isFinite(userAnswer)) 
+        {
+            window.alert('Please enter a numerical value.');
+        }
+        else if (userAnswer == saturnVLbsLiftoffThrust) //loosely typed comparison
+        {
+            window.alert('Correct! You know your moon stuff!');
+            correctAnswer = true;
+        }
+        else
+        {
+            window.alert('Incorrect. Please try again.');
+        }
+    }
 }

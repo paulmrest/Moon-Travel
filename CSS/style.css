@@ -72,6 +72,13 @@ p#cheesetype {
     text-align: center;
 }
 
+section.moongame {
+    border: 5px solid black;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+
 div#newsletter {
     padding: 0px 0px 20px 0px;
 }
