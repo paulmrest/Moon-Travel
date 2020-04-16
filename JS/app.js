@@ -8,7 +8,7 @@ function getWeightValue() {
     //get value from text box
     var weightFromTextBox = document.getElementById('enterweight').value;
     if (!isNaN(parseFloat(weightFromTextBox)) && isFinite(weightFromTextBox)) {
-        calculateCost(weightFromTextBox);
+        calculateCost(parseInt(weightFromTextBox));
     }
     else
     {
@@ -31,11 +31,6 @@ function calculateCost(validNumericalWeight) {
         }) 
     + ' to send you and your luggage to the Moon.';
 }
-
-///TEST
-var number = 10000;
-console.log(number.toLocaleString('en'))
-///TEST
 
 //determine if weight is in pounds or kilograms
 //if it is in pounds, convert to kilograms
@@ -102,9 +97,13 @@ function moonGame() {
             window.alert('Correct! You know your moon stuff!');
             correctAnswer = true;
         }
+        else if (parseInt(userAnswer) < saturnVLbsLiftoffThrust)
+        {
+            window.alert('Too low. Please try again.');
+        }
         else
         {
-            window.alert('Incorrect. Please try again.');
+            window.alert('Too high. Please try again.');
         }
     }
 }
