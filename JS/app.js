@@ -97,6 +97,10 @@ function moonGame() {
             window.alert('Correct! You know your moon stuff!');
             correctAnswer = true;
         }
+        else if (Math.abs(parseInt(userAnswer) - saturnVLbsLiftoffThrust) <= 1000)
+        {
+            window.alert('You\'re within a 1000 lbs of the answer!.');
+        }
         else if (parseInt(userAnswer) < saturnVLbsLiftoffThrust)
         {
             window.alert('Too low. Please try again.');
