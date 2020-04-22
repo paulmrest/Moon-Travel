@@ -97,6 +97,14 @@ function moonGame() {
             window.alert('Correct! You know your moon stuff!');
             correctAnswer = true;
         }
+        else if (Math.abs(parseInt(userAnswer) - saturnVLbsLiftoffThrust) <= 10000)
+        {
+            window.alert('You\'re within ten thousand pounds of the answer!.');
+        }
+        else if (Math.abs(parseInt(userAnswer) - saturnVLbsLiftoffThrust) <= 100000)
+        {
+            window.alert('You\'re within a hundred thousand pounds of the answer!.');
+        }
         else if (Math.abs(parseInt(userAnswer) - saturnVLbsLiftoffThrust) <= 1000000)
         {
             window.alert('You\'re within million pounds of the answer!.');
