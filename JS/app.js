@@ -90,7 +90,7 @@ function moonGame() {
 
         if (isNaN(parseFloat(userAnswer)) || !isFinite(userAnswer)) 
         {
-            window.alert('Please enter a numerical value.');
+            window.alert('Please enter a numerical value, dummy.');
         }
         else if (userAnswer == saturnVLbsLiftoffThrust) //loosely typed comparison
         {
